@@ -8,11 +8,8 @@ URL: http://www.vanheusden.com/listener/
 Source: http://www.vanheusden.com/listener/%name-%version.tgz
 Buildroot: %{_tmppath}/%{name}-%{version}-%{release}
 Patch0: listener-2.0.0-mdv-makefile.patch
-# BuildPreReq: kernel-headers-common
-# Automatically added by buildreq on Fri Mar 12 2004
-# BuildRequires: libncurses-devel libsndfile-devel libtinfo-devel
-BuildRequires: libncurses-devel libsndfile-devel
-Requires: libncurses libsndfile
+BuildRequires: libncurses-devel libalsa-devel libsndfile-devel
+Requires: libncurses libalsa libsndfile
 
 %description
 This program listens for sound. If it detects any, it starts recording
@@ -22,7 +19,6 @@ again.
 %prep
 %setup -q
 %patch0 -p0
-# -F10 -p1
 
 %build
 %make
