@@ -1,15 +1,15 @@
-Name: listener
-Version: 2.0.0
-Release: %mkrel 0
-Summary: listener is a sounds detection program
-Group: Sound
-License: GPL
-URL: http://www.vanheusden.com/listener/
-Source: http://www.vanheusden.com/listener/%name-%version.tgz
-Buildroot: %{_tmppath}/%{name}-%{version}-%{release}
-Patch0: listener-2.0.0-mdv-makefile.patch
-BuildRequires: libncurses-devel libalsa-devel libsndfile-devel
-Requires: libncurses libalsa libsndfile
+Name:		listener
+Version:	2.0.0
+Release:	1
+Summary:	A sounds detection program
+Group:		Sound
+License:	GPL
+URL:		http://www.vanheusden.com/listener/
+Source:		http://www.vanheusden.com/listener/%{name}-%{version}.tgz
+Patch0:		listener-2.0.0-mdv-makefile.patch
+BuildRequires:	pkgconfig(ncurses)
+BuildRequires:	pkgconfig(alsa)
+BuildRequires:	pkgconfig(sndfile)
 
 %description
 This program listens for sound. If it detects any, it starts recording
@@ -24,12 +24,10 @@ again.
 %make
 
 %install
-%make DESTDIR=%{buildroot} install
-
-%clean
-[ "%{buildroot}" != '/' ] && rm -rf %{buildroot}
+%makeinstall_std
 
 %files
-%_bindir/*
+%{_bindir}/*
 %config(noreplace) %{_sysconfdir}/*
 %doc manual.html
+
