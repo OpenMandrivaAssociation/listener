@@ -1,6 +1,6 @@
 Name:		listener
 Version:	2.0.0
-Release:	1
+Release:	2
 Summary:	A sounds detection program
 Group:		Sound
 License:	GPL
