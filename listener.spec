@@ -4,7 +4,7 @@ Release:	2
 Summary:	A sounds detection program
 Group:		Sound
 License:	GPL
-URL:		http://www.vanheusden.com/listener/
+URL:		https://www.vanheusden.com/listener/
 Source:		http://www.vanheusden.com/listener/%{name}-%{version}.tgz
 Patch0:		listener-2.0.0-mdv-makefile.patch
 BuildRequires:	pkgconfig(ncurses)
